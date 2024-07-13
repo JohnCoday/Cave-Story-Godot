@@ -1,0 +1,2925 @@
+[gd_scene load_steps=22 format=3 uid="uid://dda4xf56ny4km"]
+
+[ext_resource type="Script" path="res://EventSystem/GameRoot.gd" id="1_2nunq"]
+[ext_resource type="PackedScene" uid="uid://bqjatb5hf34fo" path="res://Scenes/StartPoint.tscn" id="2_dhuug"]
+[ext_resource type="Script" path="res://FadeThingy.gd" id="3_gklk1"]
+[ext_resource type="Texture2D" uid="uid://m7c3lohaxyma" path="res://Sprites/Misc/Fade.png" id="4_aytjq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4glup"]
+atlas = ExtResource("4_aytjq")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rddl0"]
+atlas = ExtResource("4_aytjq")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osc1y"]
+atlas = ExtResource("4_aytjq")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0taax"]
+atlas = ExtResource("4_aytjq")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbwkl"]
+atlas = ExtResource("4_aytjq")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jklb"]
+atlas = ExtResource("4_aytjq")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dx3a"]
+atlas = ExtResource("4_aytjq")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t53qw"]
+atlas = ExtResource("4_aytjq")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vr6ke"]
+atlas = ExtResource("4_aytjq")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxylo"]
+atlas = ExtResource("4_aytjq")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6oamd"]
+atlas = ExtResource("4_aytjq")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btqq8"]
+atlas = ExtResource("4_aytjq")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfoux"]
+atlas = ExtResource("4_aytjq")
+region = Rect2(192, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nsqd"]
+atlas = ExtResource("4_aytjq")
+region = Rect2(208, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uylc1"]
+atlas = ExtResource("4_aytjq")
+region = Rect2(224, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkitw"]
+atlas = ExtResource("4_aytjq")
+region = Rect2(240, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f07ce"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4glup")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rddl0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osc1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0taax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbwkl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jklb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dx3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t53qw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vr6ke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxylo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6oamd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btqq8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfoux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nsqd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uylc1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkitw")
+}],
+"loop": false,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_2nunq")
+globalScript = "^0000^
+<END>
+
+^0001^
+<PRI><MSG>Empty.<NOD><END>
+
+^0005^
+<PLS><FAO><FAI><END>
+
+^0016^
+<PRI><MSG>
+Do you want to save?<YNJ>0000<FL+>0431<SVP><CLR>Game saved.<NOD><END>
+
+^0017^
+<PRI><FLJ>0201:0018
+<LI+>1000<SOU>0020<AE+><MSG>
+Health refilled.<NOD><END>
+^0018^
+<PRI>
+<LI+>1000<SOU>0020<AE+><MSG>
+Health and missiles refilled.<NOD><END>
+
+^0019^
+<KEY><MSG>
+Do you want to rest?<YNJ>0000<FAO>0004<CMU>0000<WAI>0020<CLR>.....<NOD><CLO>
+<WAI>0050
+<LI+>1000<SOU>0020<MYD>0002<MSG>
+Health restored.<NOD><CLO><RMU><FAI>0004<END>
+
+^0030^
+<PRI><FLJ>0202:0032<FLJ>0201:0031<FL+>0201<GIT>0005<AM+>0005:0010
+<CMU>0010Got the =Missile Launcher=!<WAI>0160<NOD><RMU><CLR>The Missile Launcher is a powerful
+weapon, but its ammo is limited.<NOD>
+You can replenish your stockpile
+with items dropped by enemies.<NOD><END>
+^0031^
+<PRI><AM+>0005:0005<MSG>
+<GIT>0006Max missiles increased by <NUM>0000!<NOD><END>
+^0032^
+<PRI><AM+>0010:0005<MSG>
+<GIT>0011Max missiles increased by <NUM>0000!<NOD><END>
+
+^0040^
+<KEY><CMU>0000<WAI>0040<PRI><WAI>0040<CMU>0003
+<MSG>
+You have died.<NOD><CLR>Want to retry?<YNJ>0049<CLO>
+<FAO>0001<WAI>0050<FLJ>0431:0048<INI><END>
+
+^0041^
+<KEY><CMU>0000<HMC><WAI>0040<PRI><WAI>0040<CMU>0003
+<MSG>
+You have drowned.<NOD><CLR>Want to retry?<YNJ>0049<CLO>
+<FAO>0001<WAI>0050<FLJ>0431:0048<INI><END>
+
+^0042^
+<KEY><CMU>0000<WAI>0040<PRI><WAI>0040<CMU>0003
+<MSG><HMC>
+You were never seen again...<NOD><CLR>Want to retry?<YNJ>0049<CLO>
+<FAO0001><WAI>0050<FLJ>0431:0048<INI><END>
+
+^0048^
+<SMC><LDP><END>
+
+^0049^
+<CLO><FAO>0004<ESC>"
+
+[node name="Level" type="Node" parent="."]
+
+[node name="StartPoint" parent="Level" instance=ExtResource("2_dhuug")]
+
+[node name="FadeThingy" type="Camera2D" parent="."]
+position = Vector2(8, -16)
+zoom = Vector2(3.89, 3.89)
+script = ExtResource("3_gklk1")
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="FadeThingy"]
+
+[node name="Row1" type="Node" parent="FadeThingy"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FadeThingy/Row1"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-152, 104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="FadeThingy/Row1"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-136, 104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.449656
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="FadeThingy/Row1"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-120, 104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.298226
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="FadeThingy/Row1"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-104, 104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0182143
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="FadeThingy/Row1"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-88, 104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.904319
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="FadeThingy/Row1"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-72, 104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.727576
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="FadeThingy/Row1"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-56, 104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.280869
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="FadeThingy/Row1"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-40, 104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.198232
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="FadeThingy/Row1"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-24, 104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.883903
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="FadeThingy/Row1"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-8, 104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.469867
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="FadeThingy/Row1"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(8, 104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.318438
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="FadeThingy/Row1"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(24, 104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0384262
+
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="FadeThingy/Row1"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(40, 104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.924533
+
+[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="FadeThingy/Row1"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(56, 104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.74779
+
+[node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="FadeThingy/Row1"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(72, 104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.301081
+
+[node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="FadeThingy/Row1"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(88, 104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.186982
+
+[node name="AnimatedSprite2D17" type="AnimatedSprite2D" parent="FadeThingy/Row1"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(104, 104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.117472
+
+[node name="AnimatedSprite2D18" type="AnimatedSprite2D" parent="FadeThingy/Row1"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(120, 104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.478607
+
+[node name="AnimatedSprite2D19" type="AnimatedSprite2D" parent="FadeThingy/Row1"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(136, 104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.327178
+
+[node name="AnimatedSprite2D20" type="AnimatedSprite2D" parent="FadeThingy/Row1"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(152, 104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0471659
+
+[node name="AnimatedSprite2D21" type="AnimatedSprite2D" parent="FadeThingy/Row1"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(168, 104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.625617
+
+[node name="Row2" type="Node" parent="FadeThingy"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FadeThingy/Row2"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-152, 88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.435451
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="FadeThingy/Row2"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-136, 88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.198221
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="FadeThingy/Row2"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-120, 88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0467908
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="FadeThingy/Row2"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-104, 88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.766779
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="FadeThingy/Row2"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-88, 88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.652885
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="FadeThingy/Row2"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-72, 88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.476141
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="FadeThingy/Row2"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-56, 88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0294346
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="FadeThingy/Row2"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-40, 88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.946797
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="FadeThingy/Row2"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-24, 88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.632468
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="FadeThingy/Row2"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-8, 88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.469867
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="FadeThingy/Row2"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(8, 88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.318438
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="FadeThingy/Row2"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(24, 88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0384262
+
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="FadeThingy/Row2"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(40, 88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.924533
+
+[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="FadeThingy/Row2"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(56, 88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.74779
+
+[node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="FadeThingy/Row2"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(72, 88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.301081
+
+[node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="FadeThingy/Row2"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(88, 88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.935547
+
+[node name="AnimatedSprite2D17" type="AnimatedSprite2D" parent="FadeThingy/Row2"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(104, 88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.117472
+
+[node name="AnimatedSprite2D18" type="AnimatedSprite2D" parent="FadeThingy/Row2"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(120, 88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.478607
+
+[node name="AnimatedSprite2D19" type="AnimatedSprite2D" parent="FadeThingy/Row2"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(136, 88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.327178
+
+[node name="AnimatedSprite2D20" type="AnimatedSprite2D" parent="FadeThingy/Row2"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(152, 88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0471659
+
+[node name="AnimatedSprite2D21" type="AnimatedSprite2D" parent="FadeThingy/Row2"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(168, 88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.374182
+
+[node name="Row3" type="Node" parent="FadeThingy"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FadeThingy/Row3"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-152, 72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.155737
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="FadeThingy/Row3"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-136, 72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.938242
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="FadeThingy/Row3"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-120, 72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.786812
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="FadeThingy/Row3"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-104, 72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.5068
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="FadeThingy/Row3"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-88, 72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.392906
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="FadeThingy/Row3"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-72, 72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.216163
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="FadeThingy/Row3"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-56, 72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.769456
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="FadeThingy/Row3"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-40, 72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.686818
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="FadeThingy/Row3"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-24, 72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.37249
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="FadeThingy/Row3"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-8, 72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.469867
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="FadeThingy/Row3"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(8, 72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.318438
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="FadeThingy/Row3"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(24, 72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0384262
+
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="FadeThingy/Row3"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(40, 72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.924533
+
+[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="FadeThingy/Row3"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(56, 72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.74779
+
+[node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="FadeThingy/Row3"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(72, 72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.301081
+
+[node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="FadeThingy/Row3"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(88, 72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.675568
+
+[node name="AnimatedSprite2D17" type="AnimatedSprite2D" parent="FadeThingy/Row3"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(104, 72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.117472
+
+[node name="AnimatedSprite2D18" type="AnimatedSprite2D" parent="FadeThingy/Row3"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(120, 72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.478607
+
+[node name="AnimatedSprite2D19" type="AnimatedSprite2D" parent="FadeThingy/Row3"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(136, 72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.327178
+
+[node name="AnimatedSprite2D20" type="AnimatedSprite2D" parent="FadeThingy/Row3"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(152, 72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0471659
+
+[node name="AnimatedSprite2D21" type="AnimatedSprite2D" parent="FadeThingy/Row3"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(168, 72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.114204
+
+[node name="Row4" type="Node" parent="FadeThingy"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FadeThingy/Row4"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-152, 56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.907056
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="FadeThingy/Row4"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-136, 56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.198221
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="FadeThingy/Row4"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-120, 56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0467908
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="FadeThingy/Row4"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-104, 56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.766779
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="FadeThingy/Row4"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-88, 56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.652885
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="FadeThingy/Row4"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-72, 56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.476141
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="FadeThingy/Row4"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-56, 56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0294346
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="FadeThingy/Row4"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-40, 56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.946797
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="FadeThingy/Row4"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-24, 56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.632468
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="FadeThingy/Row4"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-8, 56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.469867
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="FadeThingy/Row4"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(8, 56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.318438
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="FadeThingy/Row4"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(24, 56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0384262
+
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="FadeThingy/Row4"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(40, 56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.924533
+
+[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="FadeThingy/Row4"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(56, 56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.74779
+
+[node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="FadeThingy/Row4"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(72, 56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.301081
+
+[node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="FadeThingy/Row4"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(88, 56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.935547
+
+[node name="AnimatedSprite2D17" type="AnimatedSprite2D" parent="FadeThingy/Row4"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(104, 56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.117472
+
+[node name="AnimatedSprite2D18" type="AnimatedSprite2D" parent="FadeThingy/Row4"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(120, 56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.478607
+
+[node name="AnimatedSprite2D19" type="AnimatedSprite2D" parent="FadeThingy/Row4"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(136, 56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.327178
+
+[node name="AnimatedSprite2D20" type="AnimatedSprite2D" parent="FadeThingy/Row4"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(152, 56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0471659
+
+[node name="AnimatedSprite2D21" type="AnimatedSprite2D" parent="FadeThingy/Row4"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(168, 56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.374182
+
+[node name="Row5" type="Node" parent="FadeThingy"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FadeThingy/Row5"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-152, 40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.567445
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="FadeThingy/Row5"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-136, 40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.592269
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="FadeThingy/Row5"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-120, 40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.440839
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="FadeThingy/Row5"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-104, 40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.160827
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="FadeThingy/Row5"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-88, 40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0469326
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="FadeThingy/Row5"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-72, 40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.870189
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="FadeThingy/Row5"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-56, 40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.423483
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="FadeThingy/Row5"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-40, 40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.340845
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="FadeThingy/Row5"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-24, 40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0265162
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="FadeThingy/Row5"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-8, 40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.469867
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="FadeThingy/Row5"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(8, 40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.318438
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="FadeThingy/Row5"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(24, 40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0384262
+
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="FadeThingy/Row5"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(40, 40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.924533
+
+[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="FadeThingy/Row5"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(56, 40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.74779
+
+[node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="FadeThingy/Row5"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(72, 40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.301081
+
+[node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="FadeThingy/Row5"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(88, 40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.329595
+
+[node name="AnimatedSprite2D17" type="AnimatedSprite2D" parent="FadeThingy/Row5"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(104, 40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.117472
+
+[node name="AnimatedSprite2D18" type="AnimatedSprite2D" parent="FadeThingy/Row5"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(120, 40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.478607
+
+[node name="AnimatedSprite2D19" type="AnimatedSprite2D" parent="FadeThingy/Row5"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(136, 40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.327178
+
+[node name="AnimatedSprite2D20" type="AnimatedSprite2D" parent="FadeThingy/Row5"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(152, 40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0471659
+
+[node name="AnimatedSprite2D21" type="AnimatedSprite2D" parent="FadeThingy/Row5"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(168, 40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.76823
+
+[node name="Row6" type="Node" parent="FadeThingy"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FadeThingy/Row6"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-152, 24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.107836
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="FadeThingy/Row6"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-136, 24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.198221
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="FadeThingy/Row6"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-120, 24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0467908
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="FadeThingy/Row6"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-104, 24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.766779
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="FadeThingy/Row6"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-88, 24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.652885
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="FadeThingy/Row6"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-72, 24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.476141
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="FadeThingy/Row6"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-56, 24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0294346
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="FadeThingy/Row6"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-40, 24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.946797
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="FadeThingy/Row6"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-24, 24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.632468
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="FadeThingy/Row6"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-8, 24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.469867
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="FadeThingy/Row6"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(8, 24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.318438
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="FadeThingy/Row6"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(24, 24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0384262
+
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="FadeThingy/Row6"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(40, 24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.924533
+
+[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="FadeThingy/Row6"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(56, 24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.74779
+
+[node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="FadeThingy/Row6"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(72, 24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.301081
+
+[node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="FadeThingy/Row6"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(88, 24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.935547
+
+[node name="AnimatedSprite2D17" type="AnimatedSprite2D" parent="FadeThingy/Row6"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(104, 24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.117472
+
+[node name="AnimatedSprite2D18" type="AnimatedSprite2D" parent="FadeThingy/Row6"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(120, 24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.478607
+
+[node name="AnimatedSprite2D19" type="AnimatedSprite2D" parent="FadeThingy/Row6"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(136, 24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.327178
+
+[node name="AnimatedSprite2D20" type="AnimatedSprite2D" parent="FadeThingy/Row6"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(152, 24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0471659
+
+[node name="AnimatedSprite2D21" type="AnimatedSprite2D" parent="FadeThingy/Row6"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(168, 24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.374182
+
+[node name="Row7" type="Node" parent="FadeThingy"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FadeThingy/Row7"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-152, 8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.936763
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="FadeThingy/Row7"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-136, 8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.938242
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="FadeThingy/Row7"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-120, 8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.786812
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="FadeThingy/Row7"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-104, 8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.5068
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="FadeThingy/Row7"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-88, 8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.392906
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="FadeThingy/Row7"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-72, 8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.216163
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="FadeThingy/Row7"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-56, 8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.769456
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="FadeThingy/Row7"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-40, 8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.686818
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="FadeThingy/Row7"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-24, 8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.37249
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="FadeThingy/Row7"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-8, 8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.469867
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="FadeThingy/Row7"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.318438
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="FadeThingy/Row7"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(24, 8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0384262
+
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="FadeThingy/Row7"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(40, 8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.924533
+
+[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="FadeThingy/Row7"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(56, 8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.74779
+
+[node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="FadeThingy/Row7"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(72, 8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.301081
+
+[node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="FadeThingy/Row7"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(88, 8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.675568
+
+[node name="AnimatedSprite2D17" type="AnimatedSprite2D" parent="FadeThingy/Row7"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(104, 8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.117472
+
+[node name="AnimatedSprite2D18" type="AnimatedSprite2D" parent="FadeThingy/Row7"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(120, 8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.478607
+
+[node name="AnimatedSprite2D19" type="AnimatedSprite2D" parent="FadeThingy/Row7"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(136, 8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.327178
+
+[node name="AnimatedSprite2D20" type="AnimatedSprite2D" parent="FadeThingy/Row7"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(152, 8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0471659
+
+[node name="AnimatedSprite2D21" type="AnimatedSprite2D" parent="FadeThingy/Row7"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(168, 8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.114204
+
+[node name="Row8" type="Node" parent="FadeThingy"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FadeThingy/Row8"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-152, -8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.145302
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="FadeThingy/Row8"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-136, -8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.198221
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="FadeThingy/Row8"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-120, -8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0467908
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="FadeThingy/Row8"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-104, -8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.766779
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="FadeThingy/Row8"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-88, -8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.652885
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="FadeThingy/Row8"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-72, -8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.476141
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="FadeThingy/Row8"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-56, -8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0294346
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="FadeThingy/Row8"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-40, -8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.946797
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="FadeThingy/Row8"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-24, -8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.632468
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="FadeThingy/Row8"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-8, -8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.469867
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="FadeThingy/Row8"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(8, -8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.318438
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="FadeThingy/Row8"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(24, -8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0384262
+
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="FadeThingy/Row8"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(40, -8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.924533
+
+[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="FadeThingy/Row8"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(56, -8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.74779
+
+[node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="FadeThingy/Row8"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(72, -8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.301081
+
+[node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="FadeThingy/Row8"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(88, -8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.935547
+
+[node name="AnimatedSprite2D17" type="AnimatedSprite2D" parent="FadeThingy/Row8"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(104, -8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.117472
+
+[node name="AnimatedSprite2D18" type="AnimatedSprite2D" parent="FadeThingy/Row8"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(120, -8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.478607
+
+[node name="AnimatedSprite2D19" type="AnimatedSprite2D" parent="FadeThingy/Row8"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(136, -8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.327178
+
+[node name="AnimatedSprite2D20" type="AnimatedSprite2D" parent="FadeThingy/Row8"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(152, -8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0471659
+
+[node name="AnimatedSprite2D21" type="AnimatedSprite2D" parent="FadeThingy/Row8"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(168, -8)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.374182
+
+[node name="Row9" type="Node" parent="FadeThingy"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FadeThingy/Row9"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-152, -24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0261661
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="FadeThingy/Row9"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-136, -24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.387303
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="FadeThingy/Row9"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-120, -24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.235873
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="FadeThingy/Row9"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-104, -24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.955861
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="FadeThingy/Row9"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-88, -24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.841966
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="FadeThingy/Row9"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-72, -24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.665222
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="FadeThingy/Row9"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-56, -24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.218516
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="FadeThingy/Row9"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-40, -24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.135879
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="FadeThingy/Row9"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-24, -24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.821549
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="FadeThingy/Row9"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-8, -24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.469867
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="FadeThingy/Row9"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(8, -24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.318438
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="FadeThingy/Row9"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(24, -24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0384262
+
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="FadeThingy/Row9"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(40, -24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.924533
+
+[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="FadeThingy/Row9"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(56, -24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.74779
+
+[node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="FadeThingy/Row9"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(72, -24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.301081
+
+[node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="FadeThingy/Row9"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(88, -24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.124629
+
+[node name="AnimatedSprite2D17" type="AnimatedSprite2D" parent="FadeThingy/Row9"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(104, -24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.117472
+
+[node name="AnimatedSprite2D18" type="AnimatedSprite2D" parent="FadeThingy/Row9"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(120, -24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.478607
+
+[node name="AnimatedSprite2D19" type="AnimatedSprite2D" parent="FadeThingy/Row9"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(136, -24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.327178
+
+[node name="AnimatedSprite2D20" type="AnimatedSprite2D" parent="FadeThingy/Row9"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(152, -24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0471659
+
+[node name="AnimatedSprite2D21" type="AnimatedSprite2D" parent="FadeThingy/Row9"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(168, -24)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.563264
+
+[node name="Row10" type="Node" parent="FadeThingy"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FadeThingy/Row10"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-152, -40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.373098
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="FadeThingy/Row10"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-136, -40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.198221
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="FadeThingy/Row10"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-120, -40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0467908
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="FadeThingy/Row10"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-104, -40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.766779
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="FadeThingy/Row10"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-88, -40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.652885
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="FadeThingy/Row10"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-72, -40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.476141
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="FadeThingy/Row10"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-56, -40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0294346
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="FadeThingy/Row10"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-40, -40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.946797
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="FadeThingy/Row10"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-24, -40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.632468
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="FadeThingy/Row10"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-8, -40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.469867
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="FadeThingy/Row10"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(8, -40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.318438
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="FadeThingy/Row10"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(24, -40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0384262
+
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="FadeThingy/Row10"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(40, -40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.924533
+
+[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="FadeThingy/Row10"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(56, -40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.74779
+
+[node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="FadeThingy/Row10"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(72, -40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.301081
+
+[node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="FadeThingy/Row10"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(88, -40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.935547
+
+[node name="AnimatedSprite2D17" type="AnimatedSprite2D" parent="FadeThingy/Row10"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(104, -40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.117472
+
+[node name="AnimatedSprite2D18" type="AnimatedSprite2D" parent="FadeThingy/Row10"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(120, -40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.478607
+
+[node name="AnimatedSprite2D19" type="AnimatedSprite2D" parent="FadeThingy/Row10"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(136, -40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.327178
+
+[node name="AnimatedSprite2D20" type="AnimatedSprite2D" parent="FadeThingy/Row10"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(152, -40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0471659
+
+[node name="AnimatedSprite2D21" type="AnimatedSprite2D" parent="FadeThingy/Row10"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(168, -40)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.374182
+
+[node name="Row11" type="Node" parent="FadeThingy"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FadeThingy/Row11"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-152, -56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0933836
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="FadeThingy/Row11"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-136, -56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.938242
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="FadeThingy/Row11"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-120, -56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.786812
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="FadeThingy/Row11"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-104, -56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.5068
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="FadeThingy/Row11"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-88, -56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.392906
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="FadeThingy/Row11"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-72, -56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.216163
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="FadeThingy/Row11"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-56, -56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.769456
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="FadeThingy/Row11"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-40, -56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.686818
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="FadeThingy/Row11"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-24, -56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.37249
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="FadeThingy/Row11"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-8, -56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.469867
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="FadeThingy/Row11"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(8, -56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.318438
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="FadeThingy/Row11"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(24, -56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0384262
+
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="FadeThingy/Row11"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(40, -56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.924533
+
+[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="FadeThingy/Row11"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(56, -56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.74779
+
+[node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="FadeThingy/Row11"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(72, -56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.301081
+
+[node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="FadeThingy/Row11"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(88, -56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.675568
+
+[node name="AnimatedSprite2D17" type="AnimatedSprite2D" parent="FadeThingy/Row11"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(104, -56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.117472
+
+[node name="AnimatedSprite2D18" type="AnimatedSprite2D" parent="FadeThingy/Row11"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(120, -56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.478607
+
+[node name="AnimatedSprite2D19" type="AnimatedSprite2D" parent="FadeThingy/Row11"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(136, -56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.327178
+
+[node name="AnimatedSprite2D20" type="AnimatedSprite2D" parent="FadeThingy/Row11"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(152, -56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0471659
+
+[node name="AnimatedSprite2D21" type="AnimatedSprite2D" parent="FadeThingy/Row11"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(168, -56)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.114204
+
+[node name="Row12" type="Node" parent="FadeThingy"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FadeThingy/Row12"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-152, -72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.844702
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="FadeThingy/Row12"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-136, -72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.198221
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="FadeThingy/Row12"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-120, -72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0467908
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="FadeThingy/Row12"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-104, -72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.766779
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="FadeThingy/Row12"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-88, -72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.652885
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="FadeThingy/Row12"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-72, -72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.476141
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="FadeThingy/Row12"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-56, -72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0294346
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="FadeThingy/Row12"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-40, -72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.946797
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="FadeThingy/Row12"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-24, -72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.632468
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="FadeThingy/Row12"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-8, -72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.469867
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="FadeThingy/Row12"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(8, -72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.318438
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="FadeThingy/Row12"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(24, -72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0384262
+
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="FadeThingy/Row12"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(40, -72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.924533
+
+[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="FadeThingy/Row12"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(56, -72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.74779
+
+[node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="FadeThingy/Row12"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(72, -72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.301081
+
+[node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="FadeThingy/Row12"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(88, -72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.935547
+
+[node name="AnimatedSprite2D17" type="AnimatedSprite2D" parent="FadeThingy/Row12"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(104, -72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.117472
+
+[node name="AnimatedSprite2D18" type="AnimatedSprite2D" parent="FadeThingy/Row12"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(120, -72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.478607
+
+[node name="AnimatedSprite2D19" type="AnimatedSprite2D" parent="FadeThingy/Row12"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(136, -72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.327178
+
+[node name="AnimatedSprite2D20" type="AnimatedSprite2D" parent="FadeThingy/Row12"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(152, -72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0471659
+
+[node name="AnimatedSprite2D21" type="AnimatedSprite2D" parent="FadeThingy/Row12"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(168, -72)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.374182
+
+[node name="Row13" type="Node" parent="FadeThingy"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FadeThingy/Row13"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-152, -88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.505092
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="FadeThingy/Row13"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-136, -88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.592269
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="FadeThingy/Row13"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-120, -88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.440839
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="FadeThingy/Row13"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-104, -88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.160827
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="FadeThingy/Row13"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-88, -88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0469326
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="FadeThingy/Row13"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-72, -88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.870189
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="FadeThingy/Row13"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-56, -88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.423483
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="FadeThingy/Row13"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-40, -88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.340845
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="FadeThingy/Row13"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-24, -88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0265162
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="FadeThingy/Row13"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-8, -88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.469867
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="FadeThingy/Row13"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(8, -88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.318438
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="FadeThingy/Row13"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(24, -88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0384262
+
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="FadeThingy/Row13"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(40, -88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.924533
+
+[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="FadeThingy/Row13"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(56, -88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.74779
+
+[node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="FadeThingy/Row13"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(72, -88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.301081
+
+[node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="FadeThingy/Row13"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(88, -88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.329595
+
+[node name="AnimatedSprite2D17" type="AnimatedSprite2D" parent="FadeThingy/Row13"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(104, -88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.117472
+
+[node name="AnimatedSprite2D18" type="AnimatedSprite2D" parent="FadeThingy/Row13"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(120, -88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.478607
+
+[node name="AnimatedSprite2D19" type="AnimatedSprite2D" parent="FadeThingy/Row13"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(136, -88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.327178
+
+[node name="AnimatedSprite2D20" type="AnimatedSprite2D" parent="FadeThingy/Row13"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(152, -88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0471659
+
+[node name="AnimatedSprite2D21" type="AnimatedSprite2D" parent="FadeThingy/Row13"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(168, -88)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.76823
+
+[node name="Row14" type="Node" parent="FadeThingy"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FadeThingy/Row14"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-152, -104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0454826
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="FadeThingy/Row14"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-136, -104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.198221
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="FadeThingy/Row14"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-120, -104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0467908
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="FadeThingy/Row14"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-104, -104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.766779
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="FadeThingy/Row14"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-88, -104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.652885
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="FadeThingy/Row14"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-72, -104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.476141
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="FadeThingy/Row14"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-56, -104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0294346
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="FadeThingy/Row14"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-40, -104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.946797
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="FadeThingy/Row14"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-24, -104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.632468
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="FadeThingy/Row14"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-8, -104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.469867
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="FadeThingy/Row14"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(8, -104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.318438
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="FadeThingy/Row14"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(24, -104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0384262
+
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="FadeThingy/Row14"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(40, -104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.924533
+
+[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="FadeThingy/Row14"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(56, -104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.74779
+
+[node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="FadeThingy/Row14"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(72, -104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.301081
+
+[node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="FadeThingy/Row14"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(88, -104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.935547
+
+[node name="AnimatedSprite2D17" type="AnimatedSprite2D" parent="FadeThingy/Row14"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(104, -104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.117472
+
+[node name="AnimatedSprite2D18" type="AnimatedSprite2D" parent="FadeThingy/Row14"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(120, -104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.478607
+
+[node name="AnimatedSprite2D19" type="AnimatedSprite2D" parent="FadeThingy/Row14"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(136, -104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.327178
+
+[node name="AnimatedSprite2D20" type="AnimatedSprite2D" parent="FadeThingy/Row14"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(152, -104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0471659
+
+[node name="AnimatedSprite2D21" type="AnimatedSprite2D" parent="FadeThingy/Row14"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(168, -104)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.374182
+
+[node name="Row15" type="Node" parent="FadeThingy"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FadeThingy/Row15"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-152, -120)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.874409
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="FadeThingy/Row15"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-136, -120)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.938242
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="FadeThingy/Row15"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-120, -120)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.786812
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="FadeThingy/Row15"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-104, -120)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.5068
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="FadeThingy/Row15"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-88, -120)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.392906
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="FadeThingy/Row15"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-72, -120)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.216163
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="FadeThingy/Row15"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-56, -120)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.769456
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="FadeThingy/Row15"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-40, -120)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.686818
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="FadeThingy/Row15"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-24, -120)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.37249
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="FadeThingy/Row15"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-8, -120)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.469867
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="FadeThingy/Row15"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(8, -120)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.318438
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="FadeThingy/Row15"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(24, -120)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0384262
+
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="FadeThingy/Row15"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(40, -120)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.924533
+
+[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="FadeThingy/Row15"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(56, -120)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.74779
+
+[node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="FadeThingy/Row15"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(72, -120)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.301081
+
+[node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="FadeThingy/Row15"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(88, -120)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.675568
+
+[node name="AnimatedSprite2D17" type="AnimatedSprite2D" parent="FadeThingy/Row15"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(104, -120)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.117472
+
+[node name="AnimatedSprite2D18" type="AnimatedSprite2D" parent="FadeThingy/Row15"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(120, -120)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.478607
+
+[node name="AnimatedSprite2D19" type="AnimatedSprite2D" parent="FadeThingy/Row15"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(136, -120)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.327178
+
+[node name="AnimatedSprite2D20" type="AnimatedSprite2D" parent="FadeThingy/Row15"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(152, -120)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0471659
+
+[node name="AnimatedSprite2D21" type="AnimatedSprite2D" parent="FadeThingy/Row15"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(168, -120)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.114204
+
+[node name="Row16" type="Node" parent="FadeThingy"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FadeThingy/Row16"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-152, -136)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0829488
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="FadeThingy/Row16"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-136, -136)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.198221
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="FadeThingy/Row16"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-120, -136)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0467908
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="FadeThingy/Row16"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-104, -136)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.766779
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="FadeThingy/Row16"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-88, -136)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.652885
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="FadeThingy/Row16"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-72, -136)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.476141
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="FadeThingy/Row16"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-56, -136)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0294346
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="FadeThingy/Row16"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-40, -136)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.946797
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="FadeThingy/Row16"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-24, -136)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.632468
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="FadeThingy/Row16"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-8, -136)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.469867
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="FadeThingy/Row16"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(8, -136)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.318438
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="FadeThingy/Row16"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(24, -136)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0384262
+
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="FadeThingy/Row16"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(40, -136)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.924533
+
+[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="FadeThingy/Row16"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(56, -136)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.74779
+
+[node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="FadeThingy/Row16"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(72, -136)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.301081
+
+[node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="FadeThingy/Row16"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(88, -136)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.935547
+
+[node name="AnimatedSprite2D17" type="AnimatedSprite2D" parent="FadeThingy/Row16"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(104, -136)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.117472
+
+[node name="AnimatedSprite2D18" type="AnimatedSprite2D" parent="FadeThingy/Row16"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(120, -136)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.478607
+
+[node name="AnimatedSprite2D19" type="AnimatedSprite2D" parent="FadeThingy/Row16"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(136, -136)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.327178
+
+[node name="AnimatedSprite2D20" type="AnimatedSprite2D" parent="FadeThingy/Row16"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(152, -136)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.0471659
+
+[node name="AnimatedSprite2D21" type="AnimatedSprite2D" parent="FadeThingy/Row16"]
+z_index = 20
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(168, -136)
+sprite_frames = SubResource("SpriteFrames_f07ce")
+frame_progress = 0.374182

@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://c0kfcchm0g70e"]
+
+[ext_resource type="Script" path="res://Scenes/QuestionMark.gd" id="1_uepsr"]
+[ext_resource type="Texture2D" uid="uid://moqn4dmnbv5" path="res://Sprites/Misc/Caret.png" id="2_l5c4h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idrsu"]
+atlas = ExtResource("2_l5c4h")
+region = Rect2(0, 80, 16, 16)
+
+[sub_resource type="Animation" id="Animation_pr2p5"]
+resource_name = "Huh"
+length = 0.8245
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -14.685), Vector2(0, -14.685), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ka0na"]
+_data = {
+"Huh": SubResource("Animation_pr2p5")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p3rin"]
+
+[node name="Node2D" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_uepsr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(0, -14.685)
+texture = SubResource("AtlasTexture_idrsu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ka0na")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_p3rin")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

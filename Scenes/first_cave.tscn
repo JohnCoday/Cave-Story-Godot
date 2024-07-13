@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2wa0bu06l5d5"]
+
+[ext_resource type="Script" path="res://EventSystem/LevelScript.gd" id="1_gby17"]
+[ext_resource type="TileSet" uid="uid://48ups7a06mvg" path="res://Tiles/Cave.tres" id="2_wnu3j"]
+[ext_resource type="PackedScene" uid="uid://diiq1u1doxfaq" path="res://Entities/door.tscn" id="3_m8epk"]
+
+[node name="First Cave" type="Node2D"]
+script = ExtResource("1_gby17")
+levelScript = "^0090^
+<MNA><CMU>0003<FAI><PLG><END>
+
+^0100^
+<PLS><FAO><TRA>Start Point:0090:8:-88:0001"
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_wnu3j")
+format = 2
+layer_0/tile_data = PackedInt32Array(131070, 65536, 0, 131071, 65536, 0, 65536, 65536, 0, 65537, 65536, 0, 65538, 65536, 0, 65539, 65536, 0, 65540, 65536, 0, 65541, 65536, 0, 65542, 65536, 0, 65543, 65536, 0, 65533, 65536, 0, -3, 65536, 0, -65539, 65536, 0, -131075, 65536, 0, -196611, 65536, 0, 131069, 65536, 0, 65544, 65536, 0, 8, 65536, 0, -65528, 65536, 0, -131064, 65536, 0, -196600, 65536, 0, -262136, 65536, 0, -262137, 65536, 0, -262138, 65536, 0, -262139, 65536, 0, -262140, 65536, 0, -262141, 65536, 0, -262142, 65536, 0, -262143, 65536, 0, -262144, 65536, 0, -196609, 65536, 0, -196610, 65536, 0)
+
+[node name="Door" parent="." instance=ExtResource("3_m8epk")]
+position = Vector2(0, 4)
+eventNumber = "0100"
